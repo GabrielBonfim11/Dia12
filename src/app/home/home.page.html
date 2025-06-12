@@ -1,20 +1,73 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-content scroll=”false”>
+  <div class="nomes">
+
+    <img src="../../assets/coracao.png">
+
     <ion-title>
-      Blank
+      <h1>Meu Amor</h1>
     </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+
+  <div>
+    <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="false" centered-slides="true"
+    slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
+    coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+
+    @for (img of imagens; track $index){
+      <swiper-slide>
+        <img [src]= "img.path">
+      </swiper-slide>
+    }
+    </swiper-container>
+    
+  </div>
+
+  <div class="mensagem">
+    <ion-text>
+      <p>
+        Nenhum texto que eu escrever vai conseguir expressar a felicidade e gratidão que tenho por estar ao seu lado. Espero que não repare, porque a minha página ficou um pouco mais simples (programar gripado é difícil), mas é de coração.
+        Só quero ressaltar o quanto você é especial pra mim. Desde o primeiro dia chamando de amor, já querendo "Morar no abraço" um do outro, não fez duvidar nunca de que você é a pessoa que eu quero para dividir a vida comigo. 
+        Te amo muito, minha princesa. Espero que goste da cestinha, a noite tomamos esse vinho juntos para comemorar essa enorme quantidade de tempo aqui abaixo que já estamos juntos! TE AMO!
+
+      </p>
+    </ion-text>
+
+  </div>
+
+  <div class="contagem">
+    <ion-label>
+      Nós Estamos Juntos há
+    </ion-label>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ dias }}</ion-card-title>
+        <ion-card-subtitle>Dias</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-header>
+        <ion-card-title>{{ horas }}</ion-card-title>
+        <ion-card-subtitle>Horas</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-header>
+        <ion-card-title>{{ minutos }}</ion-card-title>
+        <ion-card-subtitle>Minutos</ion-card-subtitle>
+      </ion-card-header>
+      
+      <ion-card-header>
+        <ion-card-title>{{ segundos }}</ion-card-title>
+        <ion-card-subtitle>Segundos</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-label class="padding">
+      E contando...
+    </ion-label>
+  </div>
+ 
 </ion-content>
+
+<audio autoplay loop>
+  <source src="../../assets/musica.mp3" type="audio/mpeg">
+</audio>
